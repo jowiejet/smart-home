@@ -37698,7 +37698,7 @@ var staticRenderFns = [
                         _c("i", { staticClass: "fa fa-edit" })
                       ]),
                       _vm._v(
-                        "\n                                    |\n                                    "
+                        "\r\n                                    |\r\n                                    "
                       ),
                       _c("a", { attrs: { href: "#" } }, [
                         _c("i", { staticClass: "fa fa-trash text-danger" })
@@ -37762,7 +37762,7 @@ var staticRenderFns = [
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "modal-body" }, [
-                  _vm._v("\n                    ...\n                ")
+                  _vm._v("\r\n                    ...\r\n                ")
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "modal-footer" }, [
