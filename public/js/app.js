@@ -2133,10 +2133,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2157,7 +2153,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get("api/user").then(function (_ref) {
         var data = _ref.data;
-        return _this.users = data;
+        return _this.users = data.data;
       });
     },
     createUser: function createUser() {
@@ -38736,19 +38732,21 @@ var render = function() {
                 "tbody",
                 _vm._l(_vm.users, function(user) {
                   return _c("tr", { key: user.id }, [
-                    _c("td", [_vm._v("183")]),
+                    _c("td", [_vm._v(_vm._s(user.id))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v("John Doe")]),
+                    _c("td", [_vm._v(_vm._s(user.name))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v("11-7-2014")]),
+                    _c("td", [_vm._v(_vm._s(user.email))]),
                     _vm._v(" "),
-                    _vm._m(2, true),
+                    _c("td", [_vm._v(_vm._s(user.access))]),
                     _vm._v(" "),
-                    _vm._m(3, true),
+                    _c("td", [_vm._v(_vm._s(user.bio))]),
                     _vm._v(" "),
-                    _vm._m(4, true),
+                    _c("td", [_vm._v(_vm._s(user.photo))]),
                     _vm._v(" "),
-                    _vm._m(5, true)
+                    _c("td", [_vm._v(_vm._s(user.created_at))]),
+                    _vm._v(" "),
+                    _vm._m(2, true)
                   ])
                 }),
                 0
@@ -38780,7 +38778,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(6),
+              _vm._m(3),
               _vm._v(" "),
               _c(
                 "form",
@@ -39020,7 +39018,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _vm._m(7)
+                  _vm._m(4)
                 ]
               )
             ])
@@ -39072,32 +39070,10 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Photo")]),
         _vm._v(" "),
+        _c("th", [_vm._v("Registered")]),
+        _vm._v(" "),
         _c("th", [_vm._v("Tools")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("span", { staticClass: "badge badge-success" }, [_vm._v("Approved")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("span", { staticClass: "badge badge-success" }, [_vm._v("Approved")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("span", { staticClass: "badge badge-success" }, [_vm._v("Approved")])
     ])
   },
   function() {

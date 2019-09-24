@@ -22,23 +22,19 @@
                                 <th>Access</th>
                                 <th>Bio</th>
                                 <th>Photo</th>
+                                <th>Registered</th>
                                 <th>Tools</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="user in users" :key="user.id">
-                                <td>183</td>
-                                <td>John Doe</td>
-                                <td>11-7-2014</td>
-                                <td>
-                                    <span class="badge badge-success">Approved</span>
-                                </td>
-                                <td>
-                                    <span class="badge badge-success">Approved</span>
-                                </td>
-                                <td>
-                                    <span class="badge badge-success">Approved</span>
-                                </td>
+                                <td>{{ user.id }}</td>
+                                <td>{{ user.name }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.access }}</td>
+                                <td>{{ user.bio }}</td>
+                                <td>{{ user.photo }}</td>
+                                <td>{{ user.created_at }}</td>
                                 <td>
                                     <a href="#">
                                         <i class="fa fa-edit"></i>
@@ -132,7 +128,7 @@
         },
         methods:{
             loadUsers(){
-                axios.get("api/user").then(({ data }) => (this.users = data));
+                axios.get("api/user").then(({ data }) => (this.users = data.data));
             },
             createUser(){
                 this.form.post('api/user');
