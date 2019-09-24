@@ -26,7 +26,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr v-for="user in users" :key="user.id">
                                 <td>183</td>
                                 <td>John Doe</td>
                                 <td>11-7-2014</td>
@@ -119,6 +119,7 @@
     export default {
         data(){
             return{
+                users: {},
                 form: new Form({
                     name: '',
                     email: '',
@@ -130,12 +131,15 @@
             }
         },
         methods:{
+            loadUsers(){
+                axios.get("api/user").then(({ data }) => (this.users = data));
+            },
             createUser(){
                 this.form.post('api/user');
             }
         },
-        mounted() {
-            console.log('Component mounted.')
+        created() {
+            this.loadUsers();
         }
     }
 </script>
