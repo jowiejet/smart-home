@@ -20,7 +20,9 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Access</th>
-                                <th>Modify</th>
+                                <th>Bio</th>
+                                <th>Photo</th>
+                                <th>Tools</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -28,6 +30,12 @@
                                 <td>183</td>
                                 <td>John Doe</td>
                                 <td>11-7-2014</td>
+                                <td>
+                                    <span class="badge badge-success">Approved</span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-success">Approved</span>
+                                </td>
                                 <td>
                                     <span class="badge badge-success">Approved</span>
                                 </td>
@@ -60,11 +68,15 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div class="form-group">
+                        <input v-model="form.name" type="text" name="name"
+                        class="form-control" :class="{ 'is-invalid': form.errors.has('name') }">
+                        <has-error :form="form" field="name"></has-error>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Create user</button>
+                    <button type="button" class="btn btn-primary">Create</button>
                 </div>
             </div>
         </div>
@@ -74,6 +86,18 @@
 
 <script>
     export default {
+        data(){
+            return{
+                form: new Form({
+                    name: '',
+                    email: '',
+                    password: '',
+                    access: '',
+                    bio: '',
+                    photo: ''
+                })
+            }
+        },
         mounted() {
             console.log('Component mounted.')
         }
