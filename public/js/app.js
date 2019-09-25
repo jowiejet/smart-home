@@ -1904,6 +1904,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -59136,17 +59144,23 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
+      _c("div", { staticClass: "row justify-content-center mt-5" }, [
+        _c("div", { staticClass: "col-12" }, [
+          _c("div", { staticClass: "card card-primary card-outline" }, [
             _c("div", { staticClass: "card-header" }, [
-              _vm._v("Dashboard Component")
+              _c("h3", { staticClass: "card-title" }, [
+                _c("i", { staticClass: "fas fa-chart-bar" }),
+                _vm._v(
+                  "\n                        Power Monitoring\n                    "
+                )
+              ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
+              _c("div", {
+                staticStyle: { height: "300px" },
+                attrs: { id: "interactive" }
+              })
             ])
           ])
         ])
