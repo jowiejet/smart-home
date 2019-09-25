@@ -129,13 +129,31 @@
         methods:{
             loadUsers(){
                 axios.get("api/user").then(({ data }) => (this.users = data.data));
+
             },
             createUser(){
+                this.$Progress.start();
                 this.form.post('api/user');
+                Fire.$emit('NewUser');
+                $('#addNew').modal('hide');
+                swal.fire({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    background: '#42b883',
+                    timer: 3000,
+                    type: 'success',
+                    title: '<b style="color: #fff;">New user has been created successfully</b>'
+                }),
+                this.$Progress.finish();
             }
         },
         created() {
             this.loadUsers();
+            Fire.$on('NewUser', () => {
+                this.loadUsers();
+            });
+            // setInterval(() => this.loadUsers(), 3000);
         }
     }
 </script>

@@ -7,41 +7,57 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+window.Form = Form;
+window.swal = swal;
+window.Fire = new Vue();
 
 import moment from 'moment';
 import { Form, HasError, AlertError } from 'vform';
-
-window.Form = Form;
+import VueProgressBar from 'vue-progressbar';
+import VueRouter from 'vue-router';
+import swal from 'sweetalert2';
 
 Vue.component(HasError.name, HasError)
 Vue.component(AlertError.name, AlertError)
 
-
-import VueRouter from 'vue-router'
 Vue.use(VueRouter)
+Vue.use(VueProgressBar, progressbaropt)
 
 let routes = [
-    { path: '/dashboard', component: require('./components/Dashboard.vue').default },
-    { path: '/family-members', component: require('./components/Family-Members.vue').default },
-    { path: '/parent', component: require('./components/Parent.vue').default },
-    { path: '/children', component: require('./components/Children.vue').default },
-    { path: '/guest', component: require('./components/Guest.vue').default }
-  ]
+  { path: '/dashboard', component: require('./components/Dashboard.vue').default },
+  { path: '/family-members', component: require('./components/Family-Members.vue').default },
+  { path: '/parent', component: require('./components/Parent.vue').default },
+  { path: '/children', component: require('./components/Children.vue').default },
+  { path: '/guest', component: require('./components/Guest.vue').default }
+]
 
+Vue.filter('upText', function(text){
+  return text.charAt(0).toUpperCase() + text.slice(1);
+});
+
+Vue.filter('myDate', function(date){
+  return moment(date).format('MMMM Do YYYY');
+});
+
+const progressbaropt = {
+  color: '#bffaf3',
+  failedColor: '#874b4b',
+  thickness: '5px',
+  transition: {
+    speed: '0.2s',
+    opacity: '0.6s',
+    termination: 300
+  },
+  autoRevert: true,
+  location: 'left',
+  inverse: false
+}
 
 const router = new VueRouter({
-    mode: 'history',
-    routes // short for `routes: routes`
-  })
+  mode: 'history',
+  routes // short for `routes: routes`
+});
 
-
-  Vue.filter('upText', function(text){
-    return text.charAt(0).toUpperCase() + text.slice(1);
-  });
-
-  Vue.filter('myDate', function(date){
-    return moment(date).format('MMMM Do YYYY');
-  });
 
 /**
  * The following block of code may be used to automatically register your
