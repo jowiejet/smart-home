@@ -75,7 +75,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </p>
                 </router-link>
               </li>
-              <li class="nav-item has-treeview">
+              <li class="nav-item">
+                <router-link to="/user" class="nav-link">
+                  <i class="nav-icon fas fa-users-cog"></i>
+                  <p>
+                    User Management
+                  </p>
+                </router-link>
+              </li>
+              <!--<li class="nav-item has-treeview">
                   <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-users-cog"></i>
                     <p>
@@ -103,7 +111,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       </router-link>
                     </li>
                   </ul>
-                </li>
+                </li>-->
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-mobile"></i>

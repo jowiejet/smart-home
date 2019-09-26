@@ -25,10 +25,7 @@ Vue.use(VueProgressBar, progressbaropt)
 
 let routes = [
   { path: '/dashboard', component: require('./components/Dashboard.vue').default },
-  { path: '/family-members', component: require('./components/Family-Members.vue').default },
-  { path: '/parent', component: require('./components/Parent.vue').default },
-  { path: '/children', component: require('./components/Children.vue').default },
-  { path: '/guest', component: require('./components/Guest.vue').default }
+  { path: '/user', component: require('./components/Users.vue').default },
 ]
 
 Vue.filter('upText', function(text){
