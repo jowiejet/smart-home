@@ -1,5 +1,9 @@
 <style>
-
+.widget-user-header{
+    background-position: center center;
+    background-size: cover;
+    height: 250px;
+}
 </style>
 
 <template>
