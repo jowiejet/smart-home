@@ -167,7 +167,7 @@
 
             this.form.put('api/profile/')
             .then(() => {
-              
+              Fire.$emit('AfterCreate');
               this.$Progress.finish();
             }).catch(() => {
               this.$Progress.fail();
@@ -198,6 +198,13 @@
         created(){
           axios.get("api/profile")
           .then(({ data }) => (this.form.fill(data)));
+        },
+        load() {
+            this.load();
+            Fire.$on('AfterCreate', () => {
+                this.load();
+            });
+            //setInterval(() => this.loadUsers(), 3000);
         }
     }
 </script>

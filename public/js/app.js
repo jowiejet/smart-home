@@ -2134,6 +2134,8 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.form.put('api/profile/').then(function () {
+        Fire.$emit('AfterCreate');
+
         _this.$Progress.finish();
       })["catch"](function () {
         _this.$Progress.fail();
@@ -2171,6 +2173,14 @@ __webpack_require__.r(__webpack_exports__);
       var data = _ref.data;
       return _this3.form.fill(data);
     });
+  },
+  load: function load() {
+    var _this4 = this;
+
+    this.load();
+    Fire.$on('AfterCreate', function () {
+      _this4.load();
+    }); //setInterval(() => this.loadUsers(), 3000);
   }
 });
 
