@@ -16,11 +16,11 @@
                 <div class="card card-widget widget-user">
                     <!-- Add the bg color to the header using any of the bg-* classes -->
                         <div class="widget text-white" style="background: url('./img/user-cover2.jpg')">
-                            <h3 class="widget-user-username text-right">Elizabeth Pierce</h3>
+                            <h3 class="widget-user-username text-right">{{ getProfileName() }}</h3>
                             <h5 class="widget-user-desc text-right">Web Designer</h5>
                         </div>
                         <div class="widget-user-image">
-                            <img class="img-circle" src="" alt="User Avatar">
+                            <img class="img-circle" :src="getProfilePhoto()" alt="User Avatar">
                         </div>
                         <div class="card-footer">
                             <div class="row">
@@ -73,35 +73,28 @@
                         <label for="inputName" class="col-sm-2 control-label">Name</label>
 
                         <div class="col-sm-10">
-                          <input type="email" v-model="form.name" class="form-control" id="inputName" placeholder="Name">
+                          <input type="email" v-model="form.name" class="form-control" id="inputName" placeholder="Name" :class="{ 'is-invalid': form.errors.has('name') }">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="inputEmail" class="col-sm-2 control-label">Email</label>
 
                         <div class="col-sm-10">
-                          <input type="email" v-model="form.email" class="form-control" id="inputEmail" placeholder="Email">
+                          <input type="email" v-model="form.email" class="form-control" id="inputEmail" placeholder="Email" :class="{ 'is-invalid': form.errors.has('email') }">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="inputName2" class="col-sm-2 control-label">Name</label>
+                        <label for="inputBio" class="col-sm-2 control-label">Bio</label>
 
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName2" placeholder="Name">
+                          <textarea class="form-control" v-model="form.bio" id="inputBio" placeholder="Bio"></textarea>
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="inputExperience" class="col-sm-2 control-label">Experience</label>
+                        <label for="inputPassword" class="col-sm-2 control-label">Password</label>
 
                         <div class="col-sm-10">
-                          <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
-
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                          <input type="password" class="form-control" v-model="form.password" id="inputPassword" placeholder="Password">
                         </div>
                       </div>
                       <div class="form-group">
@@ -153,22 +146,53 @@
           console.log('Component mounted.')
         },
         methods:{
+          getProfilePhoto(){
+            let photo = this.form.photo;
+            if(this.form.photo){
+              let prefix = (this.form.photo.match(/\//) ? '' : '/img/profile/');
+              return prefix + this.form.photo;
+            }else {
+              photo = 'img/profiles/' + this.form.photo;
+            }
+            return photo;
+          },
+          getProfileName(){
+            return this.form.name
+          },
           updateInfo(){
+            this.$Progress.start();
+            if(this.form.password == ''){
+              this.form.password = undefined;
+            }
+
             this.form.put('api/profile/')
             .then(() => {
               
+              this.$Progress.finish();
             }).catch(() => {
-              
+              this.$Progress.fail();
             });
           },
           updateProfile(e){
             let file = e.target.files[0];
             let reader = new FileReader();
-            reader.onloadend = (file) => {
-              //console.log('RESULT', reader.result)
-              this.form.photo = reader.result;
+
+            if(file['size'] < 2111775){
+              reader.onloadend = (file) => {
+                this.form.photo = reader.result;
+              }
+              reader.readAsDataURL(file);
+            }else{
+              swal.fire({
+                type: 'error',
+                title: 'Sorry...',
+                text: 'You are uploading a large file',
+                animation: true,
+                customClass: {
+                  popup: 'animated tada'
+                }
+              })
             }
-            reader.readAsDataURL(file);
           }
         },
         created(){
