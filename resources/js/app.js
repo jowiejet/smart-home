@@ -39,7 +39,8 @@ Vue.use(VueRouter)
 Vue.use(VueProgressBar, progressbaropt)
 
 let routes = [
-  { path: '/dashboard', component: require('./components/Dashboard.vue').default },
+  { path: '/', component: require('./components/ExampleComponent.vue').default },
+  { path: '/monitoring', component: require('./components/Monitoring.vue').default },
   { path: '/user', component: require('./components/Users.vue').default },
   { path: '/developer', component: require('./components/Developer.vue').default },
   { path: '/profile', component: require('./components/Profile.vue').default },

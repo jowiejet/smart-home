@@ -19,15 +19,6 @@ class UserController extends Controller
         $this->middleware('auth:api');
     }
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('api');
-    }
-    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
