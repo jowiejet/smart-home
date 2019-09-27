@@ -1,8 +1,11 @@
 <style>
-.widget-user-header{
+.widget{
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
     background-position: center center;
     background-size: cover;
-    height: 250px;
+    height: 300px;
+    padding: 1rem;
 }
 </style>
 
@@ -12,7 +15,7 @@
             <div class="col-md-12">
                 <div class="card card-widget widget-user">
                     <!-- Add the bg color to the header using any of the bg-* classes -->
-                        <div class="widget-user-header text-white" style="background: url('./img/user-cover2.jpg')">
+                        <div class="widget text-white" style="background: url('./img/user-cover2.jpg')">
                             <h3 class="widget-user-username text-right">Elizabeth Pierce</h3>
                             <h5 class="widget-user-desc text-right">Web Designer</h5>
                         </div>
@@ -70,14 +73,14 @@
                         <label for="inputName" class="col-sm-2 control-label">Name</label>
 
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputName" placeholder="Name">
+                          <input type="email" v-model="form.name" class="form-control" id="inputName" placeholder="Name">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="inputEmail" class="col-sm-2 control-label">Email</label>
 
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                          <input type="email" v-model="form.email" class="form-control" id="inputEmail" placeholder="Email">
                         </div>
                       </div>
                       <div class="form-group">
@@ -102,17 +105,19 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                            </label>
+                        <label for="exampleInputFile" class="col-sm-2 control-label">Profile Photo</label>
+                        <div class="input-group">
+                          <div class="col-sm-10 mx-3 custom-file">
+                            <input type="file" @change="updateProfile" class="custom-file-input" id="exampleInputFile">
+                            <div class="input-group-append">
+                              <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                          <button type="submit" class="btn btn-danger">Submit</button>
+                          <button type="submit" @click.prevent="updateInfo" class="btn btn-danger">Submit</button>
                         </div>
                       </div>
                     </form>
@@ -130,8 +135,45 @@
 
 <script>
     export default {
+        data(){
+          return{
+            form: new Form({
+                id: '',
+                name: '',
+                email: '',
+                password: '',
+                access: '',
+                bio: '',
+                photo: ''
+              })
+          }
+
+        },
         mounted() {
-            console.log('Component mounted.')
+          console.log('Component mounted.')
+        },
+        methods:{
+          updateInfo(){
+            this.form.put('api/profile/')
+            .then(() => {
+              
+            }).catch(() => {
+              
+            });
+          },
+          updateProfile(e){
+            let file = e.target.files[0];
+            let reader = new FileReader();
+            reader.onloadend = (file) => {
+              //console.log('RESULT', reader.result)
+              this.form.photo = reader.result;
+            }
+            reader.readAsDataURL(file);
+          }
+        },
+        created(){
+          axios.get("api/profile")
+          .then(({ data }) => (this.form.fill(data)));
         }
     }
 </script>
