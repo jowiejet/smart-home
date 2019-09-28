@@ -1846,6 +1846,42 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/404Page.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/404Page.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function mounted() {}
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Developer.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Developer.vue?vue&type=script&lang=js& ***!
@@ -1884,12 +1920,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2134,6 +2164,15 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.form.put('api/profile/').then(function () {
+        swal.fire({
+          type: 'success',
+          title: 'Updated',
+          text: 'Your info has been updated!',
+          animation: true,
+          customClass: {
+            popup: 'animated tada'
+          }
+        });
         Fire.$emit('AfterCreate');
 
         _this.$Progress.finish();
@@ -2310,6 +2349,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2327,6 +2372,10 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    getProfilePhoto: function getProfilePhoto(photo) {
+      this.form.photo = photo;
+      return "img/profile/" + photo;
+    },
     updateUser: function updateUser() {
       var _this = this;
 
@@ -2378,15 +2427,12 @@ __webpack_require__.r(__webpack_exports__);
     loadUsers: function loadUsers() {
       var _this3 = this;
 
-      if (this.$gate.isAdmin) {
+      if (this.$gate.isAdmin()) {
         axios.get("api/user").then(function (_ref) {
           var data = _ref.data;
           return _this3.users = data.data;
         });
-      } //if(this.$gate.isParent){
-      //   axios.get("api/user").then(({ data }) => (this.users = data.data));
-      // }
-
+      }
     },
     createUser: function createUser() {
       var _this4 = this;
@@ -60813,6 +60859,640 @@ AlertSuccess_component.options.__file = "AlertSuccess.vue"
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/404Page.vue?vue&type=template&id=556f0c28&":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/404Page.vue?vue&type=template&id=556f0c28& ***!
+  \**********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row justify-content-center mt-5" }, [
+      _c("div", { staticClass: "col-md-10" }, [
+        _c("div", { staticClass: "error-page" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "svg",
+            {
+              attrs: {
+                id: "a761666e-317c-445e-96b4-8ff633270475",
+                "data-name": "Layer 1",
+                xmlns: "http://www.w3.org/2000/svg",
+                width: "600px",
+                height: "100%",
+                viewBox: "0 0 1021.75928 750.26444"
+              }
+            },
+            [
+              _c("title", [_vm._v("Page Not Found")]),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M268.227,74.86778l-53.38806,87.26129a65.9906,65.9906,0,0,1-68.85449,112.54077L89.219,367.45134,636.85358,702.5042,815.86151,409.92064Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#f2f2f2"
+                }
+              }),
+              _c("circle", {
+                attrs: {
+                  cx: "97.75928",
+                  cy: "142.59338",
+                  r: "43",
+                  fill: "#f2f2f2"
+                }
+              }),
+              _c("ellipse", {
+                attrs: {
+                  cx: "496.75928",
+                  cy: "708.59338",
+                  rx: "152",
+                  ry: "10",
+                  fill: "#f2f2f2"
+                }
+              }),
+              _c("ellipse", {
+                attrs: {
+                  cx: "239.75928",
+                  cy: "745.59338",
+                  rx: "71",
+                  ry: "4.67105",
+                  fill: "#f2f2f2"
+                }
+              }),
+              _c("ellipse", {
+                attrs: {
+                  cx: "798.75928",
+                  cy: "685.59338",
+                  rx: "152",
+                  ry: "10",
+                  fill: "#f2f2f2"
+                }
+              }),
+              _c("line", {
+                attrs: {
+                  x1: "6.75928",
+                  y1: "669.59338",
+                  x2: "1021.75928",
+                  y2: "669.59338",
+                  fill: "none",
+                  stroke: "#2f2e41",
+                  "stroke-miterlimit": "10",
+                  "stroke-width": "2"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "183.25928",
+                  y: "176.09338",
+                  width: "730",
+                  height: "493",
+                  fill: "#3f3d56"
+                }
+              }),
+              _c("line", {
+                attrs: {
+                  x1: "183.25928",
+                  y1: "212.15244",
+                  x2: "913.25928",
+                  y2: "212.15244",
+                  fill: "none",
+                  stroke: "#2f2e41",
+                  "stroke-miterlimit": "10",
+                  "stroke-width": "2"
+                }
+              }),
+              _c("circle", {
+                attrs: {
+                  cx: "205.75928",
+                  cy: "194.09338",
+                  r: "9",
+                  fill: "#6c63ff"
+                }
+              }),
+              _c("circle", {
+                attrs: {
+                  cx: "232.75928",
+                  cy: "194.59338",
+                  r: "9",
+                  fill: "#6c63ff"
+                }
+              }),
+              _c("circle", {
+                attrs: {
+                  cx: "259.75928",
+                  cy: "195.09338",
+                  r: "9",
+                  fill: "#6c63ff"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "228.75928",
+                  y: "245.59338",
+                  width: "616",
+                  height: "120",
+                  fill: "#6c63ff",
+                  opacity: "0.3"
+                }
+              }),
+              _c("line", {
+                attrs: {
+                  x1: "228.75928",
+                  y1: "365.59338",
+                  x2: "844.75928",
+                  y2: "245.59338",
+                  fill: "none",
+                  stroke: "#6c63ff",
+                  "stroke-miterlimit": "10",
+                  "stroke-width": "2",
+                  opacity: "0.3"
+                }
+              }),
+              _c("line", {
+                attrs: {
+                  x1: "844.75928",
+                  y1: "365.59338",
+                  x2: "228.75928",
+                  y2: "245.59338",
+                  fill: "none",
+                  stroke: "#6c63ff",
+                  "stroke-miterlimit": "10",
+                  "stroke-width": "2",
+                  opacity: "0.3"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "228.75928",
+                  y: "441.59338",
+                  width: "147",
+                  height: "193",
+                  fill: "#6c63ff",
+                  opacity: "0.3"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "697.75928",
+                  y: "441.59338",
+                  width: "147",
+                  height: "193",
+                  fill: "#6c63ff",
+                  opacity: "0.3"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "463.25928",
+                  y: "441.59338",
+                  width: "147",
+                  height: "193",
+                  fill: "#6c63ff",
+                  opacity: "0.3"
+                }
+              }),
+              _c("line", {
+                attrs: {
+                  x1: "228.75928",
+                  y1: "441.59338",
+                  x2: "375.75928",
+                  y2: "634.59338",
+                  fill: "none",
+                  stroke: "#6c63ff",
+                  "stroke-miterlimit": "10",
+                  "stroke-width": "2",
+                  opacity: "0.3"
+                }
+              }),
+              _c("line", {
+                attrs: {
+                  x1: "375.75928",
+                  y1: "441.59338",
+                  x2: "228.75928",
+                  y2: "634.59338",
+                  fill: "none",
+                  stroke: "#6c63ff",
+                  "stroke-miterlimit": "10",
+                  "stroke-width": "2",
+                  opacity: "0.3"
+                }
+              }),
+              _c("line", {
+                attrs: {
+                  x1: "463.75928",
+                  y1: "441.59338",
+                  x2: "610.75928",
+                  y2: "634.59338",
+                  fill: "none",
+                  stroke: "#6c63ff",
+                  "stroke-miterlimit": "10",
+                  "stroke-width": "2",
+                  opacity: "0.3"
+                }
+              }),
+              _c("line", {
+                attrs: {
+                  x1: "610.75928",
+                  y1: "441.59338",
+                  x2: "463.75928",
+                  y2: "634.59338",
+                  fill: "none",
+                  stroke: "#6c63ff",
+                  "stroke-miterlimit": "10",
+                  "stroke-width": "2",
+                  opacity: "0.3"
+                }
+              }),
+              _c("line", {
+                attrs: {
+                  x1: "697.75928",
+                  y1: "441.59338",
+                  x2: "844.75928",
+                  y2: "634.59338",
+                  fill: "none",
+                  stroke: "#6c63ff",
+                  "stroke-miterlimit": "10",
+                  "stroke-width": "2",
+                  opacity: "0.3"
+                }
+              }),
+              _c("line", {
+                attrs: {
+                  x1: "844.75928",
+                  y1: "441.59338",
+                  x2: "697.75928",
+                  y2: "634.59338",
+                  fill: "none",
+                  stroke: "#6c63ff",
+                  "stroke-miterlimit": "10",
+                  "stroke-width": "2",
+                  opacity: "0.3"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "310.75928",
+                  y: "245.59338",
+                  width: "616",
+                  height: "120",
+                  fill: "#6c63ff"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "725.75928",
+                  y: "487.59338",
+                  width: "147",
+                  height: "193",
+                  fill: "#6c63ff"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "747.25928",
+                  y: "513.09338",
+                  width: "104",
+                  height: "12",
+                  fill: "#3f3d56"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "747.25928",
+                  y: "539.09338",
+                  width: "104",
+                  height: "12",
+                  fill: "#3f3d56"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "747.25928",
+                  y: "565.09338",
+                  width: "104",
+                  height: "12",
+                  fill: "#3f3d56"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "747.25928",
+                  y: "591.09338",
+                  width: "104",
+                  height: "12",
+                  fill: "#3f3d56"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "747.25928",
+                  y: "617.09338",
+                  width: "104",
+                  height: "12",
+                  fill: "#3f3d56"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "747.25928",
+                  y: "643.09338",
+                  width: "104",
+                  height: "12",
+                  fill: "#3f3d56"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "264.75928",
+                  y: "467.59338",
+                  width: "147",
+                  height: "193",
+                  fill: "#6c63ff"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "286.25928",
+                  y: "532.09338",
+                  width: "104",
+                  height: "12",
+                  fill: "#3f3d56"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "286.25928",
+                  y: "558.09338",
+                  width: "104",
+                  height: "12",
+                  fill: "#3f3d56"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "286.25928",
+                  y: "584.09338",
+                  width: "104",
+                  height: "12",
+                  fill: "#3f3d56"
+                }
+              }),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M737.71351,390.83022c0,22.46856-13.35644,30.31375-29.83387,30.31375q-.57257,0-1.14332-.01273c-.76344-.01636-1.51961-.05271-2.26668-.10361-14.87057-1.05244-26.42387-9.30115-26.42387-30.19741,0-21.62514,27.63446-48.91242,29.71026-50.93189l.00364-.00363c.08-.07816.12-.11634.12-.11634S737.71351,368.36166,737.71351,390.83022Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#3f3d56"
+                }
+              }),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M706.79266,417.70669l10.91162-15.24683L706.76539,419.3808l-.02907,1.75044c-.76344-.01636-1.51961-.05271-2.26668-.10361l1.17607-22.47946-.0091-.17451.02-.03271.11088-2.12307-10.96619-16.96276L705.802,394.62557l.02548.45079.88883-16.98456-9.38839-17.52807,9.50291,14.547.9252-35.21244.00364-.12v.11634l-.1545,27.76715,9.34661-11.008L707.567,370.05394l-.2472,15.20685,8.72677-14.59429-8.76312,16.83189-.13814,8.4541,12.66934-20.31277L707.098,398.90262Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#6c63ff"
+                }
+              }),
+              _c("circle", {
+                attrs: {
+                  cx: "82.23112",
+                  cy: "339.23907",
+                  r: "23.4327",
+                  fill: "#2f2e41"
+                }
+              }),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M159.014,429.707s.35279,14.46431-1.05837,14.8171,19.40335,5.9974,19.40335,5.9974l2.11673-19.75614Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#a0616a"
+                }
+              }),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M323.41333,553.1829s15.52268,0,15.87547-1.76394,3.52788,14.46431,3.52788,14.46431L336.46649,568s-11.9948-5.29182-13.05316-5.29182S323.41333,553.1829,323.41333,553.1829Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#a0616a"
+                }
+              }),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M340.34716,559.53309s-2.8223-9.52529-6.35018-9.87807c0,0,11.99479-7.76135,12.34758-10.23086s4.58625-8.81971,6.35019-6.703,1.76394,35.63161-1.41115,39.15949S333.997,566.922,333.997,566.922,342.81668,563.061,340.34716,559.53309Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#2f2e41"
+                }
+              }),
+              _c("polygon", {
+                attrs: {
+                  points:
+                    "59.663 619.783 56.841 634.953 69.894 637.07 69.894 619.783 59.663 619.783",
+                  fill: "#a0616a"
+                }
+              }),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M148.78317,708.05692s-2.11673-6.703-3.52788-5.64461-3.52788,7.76134-3.1751,9.52528,2.82231,15.52268,1.76394,17.9922,5.29183,15.16989,13.406,14.11152,7.40855-8.11412,7.40855-8.11412l-2.82231-10.93644L160.778,707.70413S151.60547,706.293,148.78317,708.05692Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#2f2e41"
+                }
+              }),
+              _c("circle", {
+                attrs: {
+                  cx: "74.03403",
+                  cy: "314.57634",
+                  r: "9.69629",
+                  fill: "#2f2e41"
+                }
+              }),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M150.226,384.192a9.69729,9.69729,0,0,1,8.68626-9.64386,9.80238,9.80238,0,0,0-1.01-.05243,9.69629,9.69629,0,0,0,0,19.39258,9.8052,9.8052,0,0,0,1.01-.05242A9.69729,9.69729,0,0,1,150.226,384.192Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#2f2e41"
+                }
+              }),
+              _c("circle", {
+                attrs: {
+                  cx: "82.24126",
+                  cy: "349.90021",
+                  r: "14.8171",
+                  fill: "#a0616a"
+                }
+              }),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M142.08019,527.78215s.70558,17.63941,3.52789,26.8119,12.99739,74.49668,10.88067,79.43571-12.9974,59.56284-10.52789,62.73794,14.11153,2.11672,14.11153,2.11672l15.81971-66.26581s-3.11933-73.08552,22.987-74.84947,68.7937-2.8223,68.7937-2.8223,27.51748,8.11413,39.86507,7.76134,19.40335,3.17509,19.40335,3.17509l2.11673-14.46431-54.68217-11.9948s-50.09593-17.28662-77.61341-12.70038S142.08019,527.78215,142.08019,527.78215Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#2f2e41"
+                }
+              }),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M161.83633,439.93788s-4.23346-2.46951-5.29182,0-8.46692,4.58625-11.28922,2.46952-9.87807.70558-9.87807.70558l-7.76134,22.93123s3.88067,19.75614,7.40855,30.69258,4.939,33.51487,3.52788,35.6316,28.22306,10.58365,42.68737,5.29183S198.87909,526.371,198.87909,526.371s-15.87547-22.57844-10.58364-33.16209,1.05836-22.57844,1.05836-22.57844l2.11673-11.9948-11.9948-6.703s-.70557-6.35018-3.52788-6.35018S161.83633,439.93788,161.83633,439.93788Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#d0cde1"
+                }
+              }),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M186.17872,458.98845h5.29182a11.8432,11.8432,0,0,1,3.52788,10.93643c-1.41115,6.703-7.77535,28.92537-7.77535,28.92537l-5.27781-13.75548Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#d0cde1"
+                }
+              }),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M201.37468,515.64429s10.55758,11.43228,2.79624,17.42968-9.67384-13.75874-9.67384-13.75874Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#a0616a"
+                }
+              }),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M186.17872,491.79775l2.46952,9.87807,4.23345,7.76134s14.46432,9.52528,14.46432,13.05316c0,0-6.35019-8.11412-14.46432,0l-7.23215-17.463Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#d0cde1"
+                }
+              }),
+              _c("ellipse", {
+                attrs: {
+                  cx: "84.95699",
+                  cy: "334.27072",
+                  rx: "16.16048",
+                  ry: "9.69629",
+                  fill: "#2f2e41"
+                }
+              }),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M142.08019,409.95089s11.28923-6.35019,15.87547-1.76394-13.75874,11.642-13.75874,11.642Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#a0616a"
+                }
+              }),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M137.84673,444.87692l-2.46951-1.76394s-2.82231-4.23346-5.29183-2.82231-16.93383-5.29182-16.93383-5.29182,5.29182,2.46952,5.29182-1.76394.70558-3.52788,4.23346-3.52788,3.52788,1.76394,4.939-.70558.70557-3.88067,3.17509-2.46952,5.29182.35279,5.9974-.70557,13.406-2.82231,13.406-2.82231-4.939-14.46432-5.9974-15.52268-28.223,10.93643-28.223,10.93643-34.22046,9.52529-25.40075,20.46172S131.14376,466.397,131.14376,466.397Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#d0cde1"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "430.75928",
+                  y: "515.59338",
+                  width: "147",
+                  height: "193",
+                  fill: "#6c63ff"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "471.25928",
+                  y: "546.09338",
+                  width: "66",
+                  height: "66",
+                  fill: "#3f3d56"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "446.25928",
+                  y: "626.09338",
+                  width: "116",
+                  height: "8",
+                  fill: "#3f3d56"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "446.25928",
+                  y: "648.09338",
+                  width: "116",
+                  height: "8",
+                  fill: "#3f3d56"
+                }
+              }),
+              _c("rect", {
+                attrs: {
+                  x: "446.25928",
+                  y: "670.09338",
+                  width: "116",
+                  height: "8",
+                  fill: "#3f3d56"
+                }
+              }),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M351.75293,799.89447c0,14.58087-8.6676,19.672-19.36056,19.672q-.37157,0-.742-.00826c-.49543-.01062-.98615-.0342-1.471-.06724-9.6502-.683-17.14766-6.03594-17.14766-19.59647,0-14.03354,17.93326-31.7415,19.28034-33.052l.00236-.00236c.05191-.05072.07786-.07549.07786-.07549S351.75293,785.3136,351.75293,799.89447Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#6c63ff"
+                }
+              }),
+              _c("path", {
+                attrs: {
+                  d:
+                    "M331.687,817.33584l7.08105-9.89437-7.09875,10.98077-.01886,1.13594c-.49543-.01062-.98615-.0342-1.471-.06724l.7632-14.58794-.0059-.11325.013-.02123.07195-1.37775-7.11645-11.00791,7.13886,9.97459.01653.29253.5768-11.02205-6.09255-11.37476,6.16687,9.44024.6004-22.851.00236-.07785v.07549l-.10026,18.01937,6.06544-7.14358-6.0902,8.69591-.16043,9.86842,5.6632-9.4709-5.68678,10.923-.08965,5.48625,8.22171-13.18188L331.88516,805.133Z",
+                  transform: "translate(-89.12036 -74.86778)",
+                  fill: "#3f3d56"
+                }
+              })
+            ]
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "error-content" }, [
+      _c("h3", [
+        _c("i", { staticClass: "fas fa-exclamation-triangle text-warning" }),
+        _vm._v(
+          " \n                        Oops! Page not found.\n                    "
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n                        We could not find the page you were looking for.\n                    "
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Developer.vue?vue&type=template&id=5932c622&":
 /*!************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Developer.vue?vue&type=template&id=5932c622& ***!
@@ -60876,19 +61556,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
-        ])
+        _c("div", { staticClass: "col-md-8" })
       ])
     ])
   }
@@ -61372,7 +62040,16 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(user.bio))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(user.photo))]),
+                        _c("td", [
+                          _c("img", {
+                            staticClass: "img-fluid img-thumbnail",
+                            staticStyle: { "max-height": "40px" },
+                            attrs: {
+                              alt: "Avatar",
+                              src: _vm.getProfilePhoto(user.photo)
+                            }
+                          })
+                        ]),
                         _vm._v(" "),
                         _c("td", [
                           _vm._v(_vm._s(_vm._f("myDate")(user.created_at)))
@@ -61769,7 +62446,9 @@ var render = function() {
           ]
         )
       ]
-    )
+    ),
+    _vm._v(" "),
+    !_vm.$gate.isAdmin() ? _c("div", [_c("Not-Found")], 1) : _vm._e()
   ])
 }
 var staticRenderFns = [
@@ -77950,16 +78629,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var Gate =
 /*#__PURE__*/
 function () {
-  function Gate() {
+  function Gate(user) {
     _classCallCheck(this, Gate);
+
+    this.user = user;
   }
 
   _createClass(Gate, [{
-    key: "construct",
-    value: function construct(user) {
-      this.user = user;
-    }
-  }, {
     key: "isAdmin",
     value: function isAdmin() {
       return this.user.access === 'admin';
@@ -77968,16 +78644,6 @@ function () {
     key: "isParent",
     value: function isParent() {
       return this.user.access === 'parent';
-    }
-  }, {
-    key: "isChildren",
-    value: function isChildren() {
-      return this.user.access === 'children';
-    }
-  }, {
-    key: "isGuest",
-    value: function isGuest() {
-      return this.user.access === 'guest';
     }
   }]);
 
@@ -78027,6 +78693,7 @@ window.Fire = new Vue();
 Vue.component(vform__WEBPACK_IMPORTED_MODULE_1__["HasError"].name, vform__WEBPACK_IMPORTED_MODULE_1__["HasError"]);
 Vue.component(vform__WEBPACK_IMPORTED_MODULE_1__["AlertError"].name, vform__WEBPACK_IMPORTED_MODULE_1__["AlertError"]);
 Vue.prototype.$gate = new _Gate__WEBPACK_IMPORTED_MODULE_5__["default"](window.user);
+Vue.component('Not-Found', __webpack_require__(/*! ./components/404Page.vue */ "./resources/js/components/404Page.vue")["default"]);
 Vue.component('passport-clients', __webpack_require__(/*! ./components/passport/Clients.vue */ "./resources/js/components/passport/Clients.vue")["default"]);
 Vue.component('passport-authorized-clients', __webpack_require__(/*! ./components/passport/AuthorizedClients.vue */ "./resources/js/components/passport/AuthorizedClients.vue")["default"]);
 Vue.component('passport-personal-access-tokens', __webpack_require__(/*! ./components/passport/PersonalAccessTokens.vue */ "./resources/js/components/passport/PersonalAccessTokens.vue")["default"]);
@@ -78153,6 +78820,75 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/404Page.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/components/404Page.vue ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _404Page_vue_vue_type_template_id_556f0c28___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./404Page.vue?vue&type=template&id=556f0c28& */ "./resources/js/components/404Page.vue?vue&type=template&id=556f0c28&");
+/* harmony import */ var _404Page_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./404Page.vue?vue&type=script&lang=js& */ "./resources/js/components/404Page.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _404Page_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _404Page_vue_vue_type_template_id_556f0c28___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _404Page_vue_vue_type_template_id_556f0c28___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/404Page.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/404Page.vue?vue&type=script&lang=js&":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/404Page.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_404Page_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./404Page.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/404Page.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_404Page_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/404Page.vue?vue&type=template&id=556f0c28&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/404Page.vue?vue&type=template&id=556f0c28& ***!
+  \****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_404Page_vue_vue_type_template_id_556f0c28___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./404Page.vue?vue&type=template&id=556f0c28& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/404Page.vue?vue&type=template&id=556f0c28&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_404Page_vue_vue_type_template_id_556f0c28___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_404Page_vue_vue_type_template_id_556f0c28___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 

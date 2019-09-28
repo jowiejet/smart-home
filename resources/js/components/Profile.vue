@@ -167,6 +167,15 @@
 
             this.form.put('api/profile/')
             .then(() => {
+              swal.fire({
+                type: 'success',
+                title: 'Updated',
+                text: 'Your info has been updated!',
+                animation: true,
+                customClass: {
+                  popup: 'animated tada'
+                }
+              })
               Fire.$emit('AfterCreate');
               this.$Progress.finish();
             }).catch(() => {

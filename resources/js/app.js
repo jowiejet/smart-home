@@ -24,6 +24,11 @@ Vue.component(AlertError.name, AlertError)
 Vue.prototype.$gate = new Gate(window.user);
 
 Vue.component(
+  'Not-Found',
+  require('./components/404Page.vue').default
+);
+
+Vue.component(
   'passport-clients',
   require('./components/passport/Clients.vue').default
 );

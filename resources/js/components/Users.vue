@@ -33,7 +33,9 @@
                                 <td>{{ user.email }}</td>
                                 <td>{{ user.access | upText }}</td>
                                 <td>{{ user.bio }}</td>
-                                <td>{{ user.photo }}</td>
+                                <td>
+                                    <img style="max-height: 40px;" alt="Avatar" class="img-fluid img-thumbnail" :src="getProfilePhoto(user.photo)">
+                                </td>
                                 <td>{{ user.created_at | myDate }}</td>
                                 <td>
                                     <a href="#" @click="editModal(user)">
@@ -110,6 +112,10 @@
             </div>
         </div>
     </div>
+
+    <div v-if="!$gate.isAdmin()">
+        <Not-Found></Not-Found>
+    </div>
 </div>
 </template>
 
@@ -131,6 +137,10 @@
             }
         },
         methods:{
+            getProfilePhoto(photo){
+                this.form.photo = photo;
+                return "img/profile/"+ photo;
+            },
             updateUser(){
                 this.$Progress.start();
                 this.form.put('api/user/'+this.form.id)
@@ -162,7 +172,7 @@
                 $('#addNew').modal('show');
             },
             deleteUser(id){
-                swal.fire({
+                    swal.fire({
                         title: 'Are you sure?',
                         text: "You won't be able to revert this!",
                         type: 'warning',
@@ -186,12 +196,9 @@
                 })
             },
             loadUsers(){
-                if(this.$gate.isAdmin){
+                if(this.$gate.isAdmin()){
                     axios.get("api/user").then(({ data }) => (this.users = data.data));
-                }
-                //if(this.$gate.isParent){
-                 //   axios.get("api/user").then(({ data }) => (this.users = data.data));
-               // }
+               }
             },
             createUser(){
                 this.$Progress.start();

@@ -1,6 +1,6 @@
 export default class Gate{
 
-    construct(user){
+    constructor(user){
         this.user = user;
     }
 
@@ -10,13 +10,5 @@ export default class Gate{
 
     isParent(){
         return this.user.access === 'parent';
-    }
-
-    isChildren(){
-        return this.user.access === 'children';
-    }
-
-    isGuest(){
-        return this.user.access === 'guest';
     }
 }
