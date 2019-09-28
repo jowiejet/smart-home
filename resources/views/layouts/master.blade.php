@@ -17,7 +17,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper" id="app">
-
+      
       <!-- Navbar -->
       <nav class="main-header navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
@@ -63,18 +63,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
             </div>
           </div>
-
           <!-- Sidebar Menu -->
           <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-              <li class="nav-item">
-                <router-link to="/" class="nav-link">
-                  <i class="nav-icon fas fa-tachometer-alt"></i>
-                  <p>
-                    Dashboard
-                  </p>
-                </router-link>
-              </li>
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">              
+                <li class="nav-item">
+                    <router-link to="/" class="nav-link">
+                      <i class="nav-icon fas fa-tachometer-alt"></i>
+                      <p>
+                        Dashboard
+                      </p>
+                    </router-link>
+                  </li>
               <li class="nav-item">
                 <router-link to="/monitoring" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -199,6 +198,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Default to the left -->
         <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
       </footer>
+
     </div>
     <!-- ./wrapper -->
 

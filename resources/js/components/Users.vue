@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-    <div class="row mt-5" v-if="$gate.isAdmin()">
+    <div class="row mt-5" v-if="$gate.isAdminOrParent()">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
@@ -90,6 +90,7 @@
                             <select v-model="form.access" name="access" id="access"
                                 class="form-control" :class="{ 'is-invalid': form.errors.has('access') }">
                                 <option value="">Select User Role</option>
+                                <option value="admin">Admin</option>
                                 <option value="parent">Parent</option>
                                 <option value="children">Children</option>
                                 <option value="guest">Guest</option>
@@ -113,7 +114,7 @@
         </div>
     </div>
 
-    <div v-if="!$gate.isAdmin()">
+    <div v-if="!$gate.isAdminOrParent()">
         <Not-Found></Not-Found>
     </div>
 </div>
@@ -196,7 +197,7 @@
                 })
             },
             loadUsers(){
-                if(this.$gate.isAdmin()){
+                if(this.$gate.isAdminOrParent()){
                     axios.get("api/user").then(({ data }) => (this.users = data.data));
                }
             },
