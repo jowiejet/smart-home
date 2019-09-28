@@ -20,6 +20,7 @@ import Gate from './Gate';
 
 Vue.component(HasError.name, HasError)
 Vue.component(AlertError.name, AlertError)
+Vue.component('pagination', require('laravel-vue-pagination'));
 
 Vue.prototype.$gate = new Gate(window.user);
 
@@ -43,8 +44,9 @@ Vue.component(
   require('./components/passport/PersonalAccessTokens.vue').default
 );
 
-Vue.use(VueRouter)
-Vue.use(VueProgressBar, progressbaropt)
+Vue.use(VueRouter);
+Vue.use(VueProgressBar, progressbaropt);
+
 
 let routes = [
   { path: '/', component: require('./components/ExampleComponent.vue').default },

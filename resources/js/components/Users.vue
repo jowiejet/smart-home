@@ -27,7 +27,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="user in users" :key="user.id">
+                            <tr v-for="user in users.data" :key="user.id">
                                 <td>{{ user.id }}</td>
                                 <td>{{ user.name | upText }}</td>
                                 <td>{{ user.email }}</td>
@@ -51,6 +51,11 @@
                     </table>
                 </div>
                 <!-- /.card-body -->
+                    <div class="card-footer pagination">
+                        <div class="mx-auto">
+                            <pagination :class="mx-auto" :data="users" @pagination-change-page="getResults"></pagination>
+                        </div>
+                    </div>
             </div>
             <!-- /.card -->
         </div>
@@ -138,6 +143,12 @@
             }
         },
         methods:{
+            getResults(page = 1) {
+			    axios.get('api/user?page=' + page)
+				    .then(response => {
+					    this.users = response.data;
+				    });
+		    },
             getProfilePhoto(photo){
                 this.form.photo = photo;
                 return "img/profile/"+ photo;
@@ -198,7 +209,7 @@
             },
             loadUsers(){
                 if(this.$gate.isAdminOrParent()){
-                    axios.get("api/user").then(({ data }) => (this.users = data.data));
+                    axios.get("api/user").then(({ data }) => (this.users = data));
                }
             },
             createUser(){
