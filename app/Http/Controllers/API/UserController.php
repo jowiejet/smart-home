@@ -143,4 +143,17 @@ class UserController extends Controller
 
         $user->update($request->all());
     }
+    public function search(){
+        if($search = \Request::get('q')){
+            $users = User::where(function($query) use ($search){
+                $query->where('name', 'LIKE', "%$search%")
+                      ->orwhere('email', 'LIKE', "%$search%")
+                      ->orwhere('access', 'LIKE', "%$search%")
+                      ->orwhere('bio', 'LIKE', "%$search%");
+            })->paginate(10);
+        }else{
+            $users = User::latest()->paginate(5);
+        }
+        return $users;
+    }
 }

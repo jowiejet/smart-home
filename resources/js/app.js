@@ -54,6 +54,7 @@ let routes = [
   { path: '/user', component: require('./components/Users.vue').default },
   { path: '/developer', component: require('./components/Developer.vue').default },
   { path: '/profile', component: require('./components/Profile.vue').default },
+  { path: '*', component: require('./components/404Page.vue').default },
 ]
 
 Vue.filter('upText', function(text){
@@ -105,5 +106,16 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
+    data:{
+      search: "",
+    },
+    methods:{
+      searchit: _.debounce(() => {
+        Fire.$emit('searching');
+      },1000),
+      printme() {
+        window.print();
+      }
+    },
 });

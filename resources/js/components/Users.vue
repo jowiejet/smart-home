@@ -53,7 +53,7 @@
                 <!-- /.card-body -->
                     <div class="card-footer pagination">
                         <div class="mx-auto">
-                            <pagination :class="mx-auto" :data="users" @pagination-change-page="getResults"></pagination>
+                            <pagination :data="users" @pagination-change-page="getResults"></pagination>
                         </div>
                     </div>
             </div>
@@ -236,6 +236,15 @@
             }
         },
         created() {
+            Fire.$on('searching', () => {
+                let query = this.$parent.search;
+                axios.get('api/findUser?q=' + query)
+                .then((data) => {
+                    this.users = data.data;
+                }).catch(() => {
+
+                })
+            })
             this.loadUsers();
             Fire.$on('NewUser', () => {
                 this.loadUsers();
