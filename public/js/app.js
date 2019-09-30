@@ -1876,6 +1876,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {}
 });
@@ -62269,11 +62271,16 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row justify-content-center mt-5" }, [
-      _c("div", { staticClass: "col-md-10" }, [
-        _c("div", { staticClass: "error-page" }, [
-          _vm._m(0),
-          _vm._v(" "),
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "col-md-12",
+          staticStyle: { "text-align": "center", margin: "0" }
+        },
+        [
           _c(
             "svg",
             {
@@ -62855,8 +62862,8 @@ var render = function() {
               })
             ]
           )
-        ])
-      ])
+        ]
+      )
     ])
   ])
 }
@@ -62865,18 +62872,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "error-content" }, [
-      _c("h3", [
-        _c("i", { staticClass: "fas fa-exclamation-triangle text-warning" }),
-        _vm._v(
-          " \n                        Oops! Page not found.\n                    "
-        )
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "\n                        We could not find the page you were looking for.\n                    "
-        )
+    return _c("div", { staticClass: "col-md-12 mt-3" }, [
+      _c("div", { staticClass: "error-page" }, [
+        _c("div", { staticClass: "error-content" }, [
+          _c("h3", [
+            _c("i", {
+              staticClass: "fas fa-exclamation-triangle text-warning"
+            }),
+            _vm._v(
+              " \n                        Oops! Page not found.\n                    "
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n                        We could not find the page you were looking for.\n                    "
+            )
+          ])
+        ])
       ])
     ])
   }
