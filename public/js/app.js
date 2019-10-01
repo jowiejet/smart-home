@@ -1977,6 +1977,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -63011,9 +63018,57 @@ var staticRenderFns = [
     return _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "row justify-content-center" }, [
         _c("div", { staticClass: "col-lg-3 col-6 mt-3" }, [
-          _c("div", { staticClass: "small-box bg-info" }, [
+          _c("div", { staticClass: "info-box bg-info" }, [
+            _c("span", { staticClass: "info-box-icon" }, [
+              _c("i", { staticClass: "fas fa-bookmark" })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "info-box-content" }, [
+              _c("span", { staticClass: "info-box-text" }, [
+                _vm._v("Bookmarks")
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "info-box-number" }, [
+                _vm._v("41,410")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "progress" }, [
+                _c("div", {
+                  staticClass: "progress-bar",
+                  staticStyle: { width: "70%" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "progress-description" }, [
+                _vm._v("\n              70% Increase in 30 Days\n            ")
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-3 col-6 mt-3" }, [
+          _c("div", { staticClass: "small-box bg-success" }, [
             _c("div", { staticClass: "inner" }, [
-              _c("h3"),
+              _c("h3", [_vm._v("150")]),
+              _vm._v(" "),
+              _c("p", [_vm._v("Total Devices")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "icon" }, [
+              _c("i", { staticClass: "ion ion-bag" })
+            ]),
+            _vm._v(" "),
+            _c("a", { staticClass: "small-box-footer", attrs: { href: "#" } }, [
+              _vm._v("More info "),
+              _c("i", { staticClass: "fas fa-arrow-circle-right" })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-3 col-6 mt-3" }, [
+          _c("div", { staticClass: "small-box bg-warning" }, [
+            _c("div", { staticClass: "inner" }, [
+              _c("h3", [_vm._v("2")]),
               _vm._v(" "),
               _c("p", [_vm._v("New Orders")])
             ]),
@@ -63030,47 +63085,9 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "col-lg-3 col-6 mt-3" }, [
-          _c("div", { staticClass: "small-box bg-info" }, [
+          _c("div", { staticClass: "small-box bg-danger" }, [
             _c("div", { staticClass: "inner" }, [
-              _c("h3", [_vm._v("150")]),
-              _vm._v(" "),
-              _c("p", [_vm._v("New Orders")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "icon" }, [
-              _c("i", { staticClass: "ion ion-bag" })
-            ]),
-            _vm._v(" "),
-            _c("a", { staticClass: "small-box-footer", attrs: { href: "#" } }, [
-              _vm._v("More info "),
-              _c("i", { staticClass: "fas fa-arrow-circle-right" })
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-3 col-6 mt-3" }, [
-          _c("div", { staticClass: "small-box bg-info" }, [
-            _c("div", { staticClass: "inner" }, [
-              _c("h3", [_vm._v("150")]),
-              _vm._v(" "),
-              _c("p", [_vm._v("New Orders")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "icon" }, [
-              _c("i", { staticClass: "ion ion-bag" })
-            ]),
-            _vm._v(" "),
-            _c("a", { staticClass: "small-box-footer", attrs: { href: "#" } }, [
-              _vm._v("More info "),
-              _c("i", { staticClass: "fas fa-arrow-circle-right" })
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-3 col-6 mt-3" }, [
-          _c("div", { staticClass: "small-box bg-info" }, [
-            _c("div", { staticClass: "inner" }, [
-              _c("h3", [_vm._v("150")]),
+              _c("h3", [_vm._v("4")]),
               _vm._v(" "),
               _c("p", [_vm._v("New Orders")])
             ]),
