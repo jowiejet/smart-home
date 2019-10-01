@@ -23,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $users = DB::table('users')->paginate(15);
+
+        return view('home', ['users' => $users]);
     }
 }
